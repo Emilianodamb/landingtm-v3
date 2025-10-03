@@ -1,6 +1,16 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* Mobile first: sin márgenes laterales, contenido hasta los bordes */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Desktop: márgenes y centrado para pantallas grandes */
+@media (min-width: 768px) {
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 }
