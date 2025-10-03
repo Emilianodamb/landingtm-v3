@@ -38,9 +38,12 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white z-40">
+      {/* Contenedor principal con ancho responsivo y centrado */}
       <div className="w-full md:max-w-[1280px] md:mx-auto">
+        {/* Contenedor flex para distribuir logo, navegación y menú móvil */}
         <div className="flex items-center justify-between h-20 px-4 md:px-8">
         {/* Logo */}
+        {/* Contenedor del logo con alineación centrada */}
         <div className="flex items-center">
           <img
             src={logo}
@@ -68,6 +71,7 @@ const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Mobile Menu Button */}
+        {/* Contenedor del botón hamburguesa, visible solo en móvil */}
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
@@ -76,6 +80,7 @@ const Header: React.FC<HeaderProps> = ({
             aria-expanded={isMobileMenuOpen}
           >
             {/* Animated hamburger icon */}
+            {/* Contenedor para las líneas del ícono hamburguesa animado */}
             <div className="w-6 h-6 flex flex-col justify-center items-center">
               <span
                 className={`block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${
@@ -101,6 +106,7 @@ const Header: React.FC<HeaderProps> = ({
       {isMobileMenuOpen && (
         <>
           {/* Backdrop */}
+          {/* Overlay oscuro de fondo para cerrar el menú al hacer clic fuera */}
           <div
             className="fixed inset-0 z-40 md:hidden"
             onClick={closeMobileMenu}
@@ -108,9 +114,12 @@ const Header: React.FC<HeaderProps> = ({
           />
           
           {/* Mobile Menu */}
+          {/* Panel lateral del menú móvil deslizable desde la derecha */}
           <div className="fixed top-0 right-0 h-full w-56 backdrop-blur-xs shadow-xl z-50 md:hidden transform transition-transform duration-300 ease-in-out">
+            {/* Contenedor flex vertical para organizar header, navegación y botón CTA */}
             <div className="flex flex-col h-full">
               {/* Menu Header - Solo botón X a la derecha */}
+              {/* Header del menú móvil con botón de cierre alineado a la derecha */}
               <div className="flex justify-end p-4 mt-1">
                 <button
                   onClick={closeMobileMenu}
@@ -153,9 +162,10 @@ const Header: React.FC<HeaderProps> = ({
               </nav>
 
               {/* CTA Button */}
+              {/* Contenedor del botón de llamada a la acción con borde superior */}
               <div className="p-4 border-t">
-                <button className="w-full px-6 py-3 text-sm font-bold bg-yellow-300 text-black hover:bg-yellow-400 transition-colors rounded">
-                  AGENDAR TURNO
+                <button className="w-full px-6 py-3 text-sm font-bold bg-yellow-300 text-black hover:bg-yellow-400 transition-colors uppercase">
+                  Agendar turno
                 </button>
               </div>
             </div>
