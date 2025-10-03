@@ -1,9 +1,16 @@
 // Interfaces mínimas para los componentes del landing page
 // Se expandirán conforme se desarrolle cada componente
 
-// Interfaces básicas de componentes
+// Header Interface
 export interface HeaderProps {
-  // Por expandir según necesidades
+  logo?: string;
+  navigationItems?: NavigationItem[];
+}
+
+export interface NavigationItem {
+  label: string;
+  href: string;
+  isExternal?: boolean;
 }
 
 export interface HeroProps {
