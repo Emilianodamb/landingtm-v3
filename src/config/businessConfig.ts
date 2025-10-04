@@ -1,4 +1,4 @@
-import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig, BusinessContactInfo, ContactMethod } from '../types';
+import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig, BusinessContactInfo, ContactMethod, FooterSection, SocialMedia, FooterCompanyInfo, FooterLink } from '../types';
 
 // Configuración del negocio
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -316,5 +316,189 @@ export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
     href: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Buenos+Aires,+Argentina',
     description: 'Lun-Vie: 8:00-12:00 | 14:30-18:00',
     available: true,
+  },
+];
+
+// Configuración de la empresa para footer
+export const FOOTER_COMPANY_CONFIG: FooterCompanyInfo = {
+  name: 'Total Mecánica Banfield',
+  description: 'Con más de 40 años de experiencia, somos el taller mecánico de confianza en Banfield. Especialistas en diagnóstico, reparación y mantenimiento de vehículos de todas las marcas.',
+  address: 'Capdevila 125, Banfield, Buenos Aires',
+  phone: '+54 11 2387-4371',
+  email: 'info@totalmecánicabanfield.com.ar',
+  foundedYear: 1983,
+  logoUrl: '/logo-white.png',
+};
+
+// Secciones del footer
+export const FOOTER_SECTIONS_CONFIG: FooterSection[] = [
+  {
+    id: 'services',
+    title: 'Nuestros Servicios',
+    order: 1,
+    links: [
+      {
+        id: 'maintenance',
+        label: 'Mantenimiento preventivo',
+        href: '#services',
+        description: 'Chequeos completos para evitar fallas',
+      },
+      {
+        id: 'diagnostic',
+        label: 'Diagnóstico computarizado',
+        href: '#services',
+        description: 'Detección precisa de fallas',
+      },
+      {
+        id: 'brakes',
+        label: 'Sistema de frenos',
+        href: '#services',
+        description: 'Reparación y mantenimiento',
+      },
+      {
+        id: 'aircon',
+        label: 'Aire acondicionado',
+        href: '#services',
+        description: 'Carga de gas y reparaciones',
+      },
+      {
+        id: 'pre-vtv',
+        label: 'Revisión pre-VTV',
+        href: '#services',
+        description: 'Preparación para verificación técnica',
+      },
+    ],
+  },
+  {
+    id: 'quick-links',
+    title: 'Enlaces Rápidos',
+    order: 2,
+    links: [
+      {
+        id: 'about',
+        label: 'Sobre Nosotros',
+        href: '#about',
+        description: 'Conoce nuestra historia y experiencia',
+      },
+      {
+        id: 'brands',
+        label: 'Marcas que Atendemos',
+        href: '#brands',
+        description: 'Todas las marcas de vehículos',
+      },
+      {
+        id: 'contact',
+        label: 'Contacto',
+        href: '#contact',
+        description: 'Ponte en contacto con nosotros',
+      },
+      {
+        id: 'location',
+        label: 'Ubicación y Horarios',
+        href: '#location',
+        description: 'Cómo llegar y cuando estamos abiertos',
+      },
+      {
+        id: 'testimonials',
+        label: 'Testimonios',
+        href: '#about',
+        description: 'Lo que dicen nuestros clientes',
+      },
+    ],
+  },
+  {
+    id: 'contact-info',
+    title: 'Información de Contacto',
+    order: 3,
+    links: [
+      {
+        id: 'address',
+        label: 'Capdevila 125, Banfield',
+        href: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Buenos+Aires,+Argentina',
+        isExternal: true,
+        icon: 'location',
+        description: 'Buenos Aires, Argentina (1828)',
+      },
+      {
+        id: 'phone',
+        label: '+54 11 2387-4371',
+        href: 'tel:+5491123874371',
+        icon: 'phone',
+        description: 'Lun-Vie: 8:00-12:00 | 14:30-18:00',
+      },
+      {
+        id: 'email',
+        label: 'info@totalmecánicabanfield.com.ar',
+        href: 'mailto:info@totalmecánicabanfield.com.ar',
+        icon: 'email',
+        description: 'Respuesta en 24-48hs',
+      },
+      {
+        id: 'whatsapp',
+        label: 'WhatsApp',
+        href: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+        isExternal: true,
+        icon: 'whatsapp',
+        description: 'Respuesta rápida las 24hs',
+      },
+    ],
+  },
+];
+
+// Redes sociales
+export const FOOTER_SOCIAL_CONFIG: SocialMedia[] = [
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    url: 'https://facebook.com/totalmecánicabanfield',
+    icon: 'facebook',
+    color: '#1877F2',
+    hoverColor: '#166FE5',
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    url: 'https://instagram.com/totalmecánicabanfield',
+    icon: 'instagram',
+    color: '#E4405F',
+    hoverColor: '#D73652',
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp',
+    url: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+    icon: 'whatsapp',
+    color: '#25D366',
+    hoverColor: '#22C55E',
+  },
+  {
+    id: 'youtube',
+    name: 'YouTube',
+    url: 'https://youtube.com/@totalmecánicabanfield',
+    icon: 'youtube',
+    color: '#FF0000',
+    hoverColor: '#E60000',
+  },
+];
+
+// Enlaces legales del footer
+export const FOOTER_LEGAL_CONFIG: FooterLink[] = [
+  {
+    id: 'privacy',
+    label: 'Política de Privacidad',
+    href: '/privacy-policy',
+    description: 'Cómo protegemos tus datos personales',
+  },
+  {
+    id: 'terms',
+    label: 'Términos y Condiciones',
+    href: '/terms-conditions',
+    description: 'Condiciones de uso de nuestros servicios',
+  },
+  {
+    id: 'cookies',
+    label: 'Política de Cookies',
+    href: '/cookie-policy',
+    description: 'Uso de cookies en nuestro sitio web',
   },
 ];

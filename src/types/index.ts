@@ -238,8 +238,62 @@ export interface ContactFormErrors {
   messageContent?: string;
 }
 
+// Interfaces para Footer component
 export interface FooterProps {
-  // Por expandir según necesidades
+  title?: string;
+  sections?: FooterSection[];
+  socialLinks?: SocialMedia[];
+  companyInfo?: FooterCompanyInfo;
+  legalLinks?: FooterLink[];
+  className?: string;
+}
+
+// Sección del footer (Servicios, Enlaces rápidos, etc.)
+export interface FooterSection {
+  id: string;
+  title: string;
+  links: FooterLink[];
+  order?: number;
+}
+
+// Enlaces del footer
+export interface FooterLink {
+  id: string;
+  label: string;
+  href: string;
+  isExternal?: boolean;
+  icon?: string;
+  description?: string;
+}
+
+// Redes sociales
+export interface SocialMedia {
+  id: string;
+  name: string;
+  url: string;
+  icon: SocialIcon;
+  color: string;
+  hoverColor?: string;
+}
+
+export type SocialIcon = 
+  | 'facebook'
+  | 'instagram'
+  | 'whatsapp'
+  | 'youtube'
+  | 'twitter'
+  | 'linkedin'
+  | 'tiktok';
+
+// Información de la empresa para el footer
+export interface FooterCompanyInfo {
+  name: string;
+  description: string;
+  address: string;
+  phone: string;
+  email: string;
+  foundedYear: number;
+  logoUrl?: string;
 }
 
 // Interfaces para OurBrands component
