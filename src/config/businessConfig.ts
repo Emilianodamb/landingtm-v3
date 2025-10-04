@@ -1,4 +1,4 @@
-import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service } from '../types';
+import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig } from '../types';
 
 // Configuración del negocio
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -134,3 +134,40 @@ export const SERVICES_CONFIG: Service[] = [
     category: 'mecánico',
   },
 ];
+
+// Configuración de marcas
+export const BRANDS_CONFIG: Brand[] = [
+  { id: 1, name: 'Ford', logo: '/brands/ford.png', category: 'comercial' },
+  { id: 2, name: 'Chevrolet', logo: '/brands/chevrolet.png', category: 'comercial' },
+  { id: 3, name: 'Toyota', logo: '/brands/toyota.png', category: 'importada', featured: true },
+  { id: 4, name: 'Volkswagen', logo: '/brands/vw.png', category: 'importada' },
+  { id: 5, name: 'Peugeot', logo: '/brands/peugeot.png', category: 'importada' },
+  { id: 6, name: 'Renault', logo: '/brands/renault.png', category: 'importada' },
+  { id: 7, name: 'Fiat', logo: '/brands/fiat.png', category: 'popular' },
+  { id: 8, name: 'Honda', logo: '/brands/honda.png', category: 'importada' },
+  { id: 9, name: 'BMW', logo: '/brands/bmw.png', category: 'premium', featured: true },
+  { id: 10, name: 'Mercedes-Benz', logo: '/brands/mercedes.png', category: 'premium' },
+  { id: 11, name: 'Audi', logo: '/brands/audi.png', category: 'premium' },
+  { id: 12, name: 'Citroën', logo: '/brands/citroen.png', category: 'importada' },
+  { id: 13, name: 'Hyundai', logo: '/brands/hyundai.png', category: 'importada' },
+  { id: 14, name: 'Nissan', logo: '/brands/nissan.png', category: 'importada' },
+  { id: 15, name: 'Jeep', logo: '/brands/jeep.png', category: 'premium' },
+  { id: 16, name: 'Suzuki', logo: '/brands/suzuki.png', category: 'popular' },
+  { id: 17, name: 'Chery', logo: '/brands/chery.png', category: 'nacional' },
+];
+
+// Configuración del carrusel
+export const CAROUSEL_CONFIG: CarouselConfig = {
+  slidesPerView: {
+    mobile: 2,
+    tablet: 3,
+    desktop: 4,
+  },
+  spaceBetween: 20,
+  autoplay: true,
+  speed: 500,
+  slideInterval: 3000,
+  loop: true,
+  navigation: true,
+  pagination: true,
+};

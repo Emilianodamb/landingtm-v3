@@ -144,6 +144,51 @@ export interface FooterProps {
   // Por expandir según necesidades
 }
 
+// Interfaces para OurBrands component
+export interface OurBrandsProps {
+  title?: string;
+  subtitle?: string;
+  brands?: Brand[];
+  carouselConfig?: CarouselConfig;
+  showNavigation?: boolean;
+  showPagination?: boolean;
+  className?: string;
+}
+
+// Configuración de marca individual
+export interface Brand {
+  id: number;
+  name: string;
+  logo: string;
+  alt?: string;
+  category?: BrandCategory;
+  featured?: boolean;
+}
+
+// Categorías de marcas
+export type BrandCategory = 
+  | 'premium'
+  | 'comercial'
+  | 'popular'
+  | 'importada'
+  | 'nacional';
+
+// Configuración del carrusel
+export interface CarouselConfig {
+  slidesPerView: {
+    mobile: number;
+    tablet: number;
+    desktop: number;
+  };
+  spaceBetween: number;
+  autoplay: boolean;
+  speed: number;
+  slideInterval: number;
+  loop: boolean;
+  navigation: boolean;
+  pagination: boolean;
+}
+
 // Tipos básicos que pueden ser útiles desde el inicio
 export type ComponentSize = 'sm' | 'md' | 'lg' | 'xl';
 export type ComponentVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
