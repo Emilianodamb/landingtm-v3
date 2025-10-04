@@ -132,8 +132,46 @@ export interface IconConfig {
   style?: Record<string, any>;
 }
 
+// Interfaces para About component
 export interface AboutProps {
-  // Por expandir según necesidades
+  title?: string;
+  subtitle?: string;
+  aboutItems?: AboutItem[];
+  testimonials?: Testimonial[];
+  testimonialsConfig?: TestimonialCarouselConfig;
+  className?: string;
+}
+
+export interface AboutItem {
+  id?: string;
+  icon: AboutIcon;
+  title: string;
+  desc: string;
+}
+
+// Iconos disponibles para About
+export type AboutIcon = 
+  | 'EngineeringIcon'
+  | 'HandshakeIcon' 
+  | 'VerifiedIcon'
+  | 'CreditCardIcon';
+
+// Interface para testimoniales
+export interface Testimonial {
+  id: number;
+  name: string;
+  service: string;
+  rating: number;
+  comment: string;
+  date: string;
+  avatar: string;
+}
+
+// Configuración del carrusel de testimoniales
+export interface TestimonialCarouselConfig {
+  autoPlay: boolean;
+  slideInterval: number;
+  pauseOnManualNavigation: number;
 }
 
 export interface ContactProps {
