@@ -1,4 +1,4 @@
-import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig } from '../types';
+import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig, BusinessContactInfo, ContactMethod } from '../types';
 
 // Configuración del negocio
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -251,3 +251,70 @@ export const TESTIMONIALS_CAROUSEL_CONFIG: TestimonialCarouselConfig = {
   slideInterval: 5000, // 5 segundos
   pauseOnManualNavigation: 10000, // 10 segundos después de navegación manual
 };
+
+// Configuración de contacto del negocio
+export const BUSINESS_CONTACT_CONFIG: BusinessContactInfo = {
+  businessName: 'Total Mecánica Banfield',
+  phoneNumber: '+54 11 2387-4371',
+  emailAddress: 'info@totalmecánicabanfield.com.ar',
+  whatsappInfo: {
+    number: '+5491123874371',
+    defaultMessage: 'Hola! Me interesa obtener información sobre sus servicios de mecánica.',
+  },
+  businessAddress: {
+    street: 'Capdevila 125',
+    city: 'Banfield',
+    state: 'Buenos Aires',
+    country: 'Argentina',
+    postalCode: '1828',
+  },
+  businessSchedule: {
+    weekdays: 'Lunes a Viernes: 8:00 AM - 12:00 PM | 2:30 PM - 6:00 PM',
+    weekend: 'Sábados y Domingos: Cerrado',
+    holidays: 'Feriados: Cerrado',
+  },
+};
+
+// Métodos de contacto disponibles
+export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
+  {
+    id: 'whatsapp',
+    type: 'whatsapp',
+    label: 'WhatsApp',
+    value: '+54 11 2387-4371',
+    icon: '📱',
+    href: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+    description: 'Respuesta rápida las 24hs',
+    available: true,
+  },
+  {
+    id: 'phone',
+    type: 'phone',
+    label: 'Teléfono',
+    value: '+54 11 2387-4371',
+    icon: '📞',
+    href: 'tel:+5491123874371',
+    description: 'Llamanos durante horarios de atención',
+    available: true,
+  },
+  {
+    id: 'email',
+    type: 'email',
+    label: 'Email',
+    value: 'info@totalmecánicabanfield.com.ar',
+    icon: '✉️',
+    href: 'mailto:info@totalmecánicabanfield.com.ar',
+    description: 'Te respondemos en 24-48hs',
+    available: true,
+  },
+  {
+    id: 'address',
+    type: 'address',
+    label: 'Visitanos',
+    value: 'Capdevila 125, Banfield',
+    icon: '📍',
+    href: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Buenos+Aires,+Argentina',
+    description: 'Lun-Vie: 8:00-12:00 | 14:30-18:00',
+    available: true,
+  },
+];

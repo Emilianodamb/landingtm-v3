@@ -174,8 +174,68 @@ export interface TestimonialCarouselConfig {
   pauseOnManualNavigation: number;
 }
 
+// Interfaces para Contact component
 export interface ContactProps {
-  // Por expandir según necesidades
+  title?: string;
+  subtitle?: string;
+  businessContact?: BusinessContactInfo;
+  contactMethods?: ContactMethod[];
+  className?: string;
+}
+
+// Información completa de contacto del negocio
+export interface BusinessContactInfo {
+  businessName: string;
+  phoneNumber: string;
+  emailAddress: string;
+  whatsappInfo: {
+    number: string;
+    defaultMessage: string;
+  };
+  businessAddress: {
+    street: string;
+    city: string;
+    state: string;
+    country: string;
+    postalCode: string;
+  };
+  businessSchedule: {
+    weekdays: string;
+    weekend: string;
+    holidays?: string;
+  };
+}
+
+// Métodos de contacto disponibles
+export interface ContactMethod {
+  id: string;
+  type: ContactMethodType;
+  label: string;
+  value: string;
+  icon: string;
+  href: string;
+  description?: string;
+  available?: boolean;
+}
+
+export type ContactMethodType = 'phone' | 'email' | 'whatsapp' | 'address';
+
+// Formulario de contacto
+export interface ContactFormData {
+  fullName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  serviceType: string;
+  messageContent: string;
+  preferredContact: ContactMethodType;
+}
+
+export interface ContactFormErrors {
+  fullName?: string;
+  emailAddress?: string;
+  phoneNumber?: string;
+  serviceType?: string;
+  messageContent?: string;
 }
 
 export interface FooterProps {
