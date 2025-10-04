@@ -1,4 +1,4 @@
-import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig, BusinessContactInfo, ContactMethod, FooterSection, SocialMedia, FooterCompanyInfo, FooterLink } from '../types';
+import type { BusinessConfig, ScheduleConfig, LocationConfig, MapConfig, Service, Brand, CarouselConfig, AboutItem, Testimonial, TestimonialCarouselConfig, BusinessContactInfo, ContactMethod, FooterSection, SocialMedia, FooterCompanyInfo, FooterLink, HeroConfig, HeaderConfig } from '../types';
 
 // Configuración del negocio
 export const BUSINESS_CONFIG: BusinessConfig = {
@@ -502,3 +502,34 @@ export const FOOTER_LEGAL_CONFIG: FooterLink[] = [
     description: 'Uso de cookies en nuestro sitio web',
   },
 ];
+
+// Configuración del componente Hero
+export const HERO_CONFIG: HeroConfig = {
+  title: 'Tu taller mecánico de confianza en Zona Sur',
+  subtitle: 'Atención profesional, diagnósticos precisos y soluciones confiables para tu vehículo. Más de 40 años de experiencia en Zona Sur. Reservá tu turno por WhatsApp.',
+  ctaText: 'Contactanos ahora',
+  ctaHref: '#contact',
+  heroImage: {
+    src: '/2008azultm.png',
+    alt: 'Vehículo Peugeot 2008 azul - Total Mecánica Banfield',
+    className: 'max-w-xs sm:max-w-md md:max-w-lg object-contain',
+  },
+};
+
+// Configuración del componente Header
+export const HEADER_CONFIG: HeaderConfig = {
+  logo: '/logotmshadows.png',
+  logoAlt: 'Total Mecánica Banfield - Logo',
+  navigationItems: [
+    { label: 'Inicio', href: '#home' },
+    { label: 'Servicios', href: '#services' },
+    { label: 'Nosotros', href: '#about' },
+    { label: 'Marcas', href: '#brands' },
+    { label: 'Contacto', href: '#contact' },
+  ],
+  ctaButton: {
+    text: 'Agendar turno',
+    href: '#contact',
+    variant: 'primary',
+  },
+};

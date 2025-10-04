@@ -2,9 +2,11 @@
 // Se expandirán conforme se desarrolle cada componente
 
 // Header Interface
+// Interfaces para Header component
 export interface HeaderProps {
   logo?: string;
   navigationItems?: NavigationItem[];
+  className?: string;
 }
 
 export interface NavigationItem {
@@ -13,8 +15,42 @@ export interface NavigationItem {
   isExternal?: boolean;
 }
 
+// Interfaces para Hero component
 export interface HeroProps {
-  // Por expandir según necesidades  
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  heroImage?: HeroImageConfig;
+  className?: string;
+}
+
+// Configuración de la imagen del hero
+export interface HeroImageConfig {
+  src: string;
+  alt: string;
+  className?: string;
+}
+
+// Configuración completa del Hero
+export interface HeroConfig {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaHref: string;
+  heroImage: HeroImageConfig;
+}
+
+// Configuración completa del Header
+export interface HeaderConfig {
+  logo: string;
+  logoAlt: string;
+  navigationItems: NavigationItem[];
+  ctaButton: {
+    text: string;
+    href: string;
+    variant?: 'primary' | 'secondary';
+  };
 }
 
 export interface ScheduleLocationProps {
@@ -344,3 +380,22 @@ export interface CarouselConfig {
 // Tipos básicos que pueden ser útiles desde el inicio
 export type ComponentSize = 'sm' | 'md' | 'lg' | 'xl';
 export type ComponentVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
+
+// Tipos comunes para props de componentes
+export interface BaseComponentProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+// Estados comunes de UI
+export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
+export type ThemeVariant = 'light' | 'dark';
+
+// Configuración común de validación
+export interface ValidationRule {
+  required?: boolean;
+  minLength?: number;
+  maxLength?: number;
+  pattern?: RegExp;
+  message?: string;
+}
