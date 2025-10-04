@@ -96,7 +96,40 @@ export interface BusinessStatus {
 }
 
 export interface ServicesProps {
-  // Por expandir según necesidades
+  title?: string;
+  subtitle?: string;
+  services?: Service[];
+  className?: string;
+}
+
+// Configuración de servicio individual
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon: ServiceIcon;
+  category?: string;
+  featured?: boolean;
+}
+
+// Tipos de iconos disponibles para servicios
+export type ServiceIcon = 
+  | 'maintenance'
+  | 'inspection' 
+  | 'injection'
+  | 'diagnostic'
+  | 'airConditioning'
+  | 'suspension'
+  | 'brakes'
+  | 'engine'
+  | 'electrical'
+  | 'transmission';
+
+// Configuración de iconos
+export interface IconConfig {
+  component: React.ComponentType<any>;
+  color: string;
+  style?: Record<string, any>;
 }
 
 export interface AboutProps {
