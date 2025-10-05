@@ -260,6 +260,8 @@ export const BUSINESS_CONTACT_CONFIG: BusinessContactInfo = {
   whatsappInfo: {
     number: '+5491123874371',
     defaultMessage: 'Hola! Me interesa obtener información sobre sus servicios de mecánica.',
+    ctaMessage: 'Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
+    ctaUrl: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
   },
   businessAddress: {
     street: 'Capdevila 125',
@@ -283,7 +285,7 @@ export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
     label: 'WhatsApp',
     value: '+54 11 2387-4371',
     icon: '📱',
-    href: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+    href: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
     description: 'Respuesta rápida las 24hs',
     available: true,
   },
@@ -436,7 +438,7 @@ export const FOOTER_SECTIONS_CONFIG: FooterSection[] = [
       {
         id: 'whatsapp',
         label: 'WhatsApp',
-        href: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+        href: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
         isExternal: true,
         icon: 'whatsapp',
         description: 'Respuesta rápida las 24hs',
@@ -466,7 +468,7 @@ export const FOOTER_SOCIAL_CONFIG: SocialMedia[] = [
   {
     id: 'whatsapp',
     name: 'WhatsApp',
-    url: 'https://wa.me/5491123874371?text=Hola!%20Me%20interesa%20obtener%20información%20sobre%20sus%20servicios%20de%20mecánica.',
+    url: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
     icon: 'whatsapp',
     color: '#25D366',
     hoverColor: '#22C55E',
@@ -508,7 +510,7 @@ export const HERO_CONFIG: HeroConfig = {
   title: 'Tu taller mecánico de confianza en Zona Sur',
   subtitle: 'Atención profesional, diagnósticos precisos y soluciones confiables para tu vehículo. Más de 40 años de experiencia en Zona Sur. Reservá tu turno por WhatsApp.',
   ctaText: 'Contactanos ahora',
-  ctaHref: '#contact',
+  ctaHref: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
   heroImage: {
     src: '/2008azultm.png',
     alt: 'Vehículo Peugeot 2008 azul - Total Mecánica Banfield',
@@ -528,7 +530,7 @@ export const HEADER_CONFIG: HeaderConfig = {
   ],
   ctaButton: {
     text: 'Agendar turno',
-    href: '#contact',
+    href: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
     variant: 'primary',
   },
 };

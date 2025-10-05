@@ -23,7 +23,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   navigationItems,
   ctaButton,
 }) => {
-  const activeSection = useActiveSection();
+  const { activeSection, isAtTop } = useActiveSection();
   const menuRef = useRef<HTMLDivElement>(null);
   
   const getSectionFromHref = (href: string) => {
@@ -31,6 +31,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   };
 
   const isActive = (href: string) => {
+    if (isAtTop) return false; // No mostrar activos cuando estamos en el top
     const section = getSectionFromHref(href);
     return activeSection === section;
   };
@@ -139,6 +140,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           <div className="p-4 border-t border-gray-200 bg-white">
             <a
               href={ctaButton.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block w-full px-6 py-3 text-sm font-bold border border-transparent shadow-md rounded-none transition-all duration-300 ease-in-out uppercase text-center text-black bg-yellow-300 shadow-red-600 hover:bg-red-600 hover:text-white hover:shadow-yellow-600"
             >
               {ctaButton.text}

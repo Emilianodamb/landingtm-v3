@@ -33,8 +33,10 @@ const HeroContent: React.FC<HeroContentProps> = ({
       <div className="mb-16">
         <a
           href={ctaHref}
-          className="inline-block bg-yellow-300 text-black font-bold text-lg uppercase px-8 py-4 rounded-none hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
-          aria-label={`${ctaText} - Ir a la sección de contacto`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center border border-transparent text-lg font-bold shadow-md rounded-none gap-2 transition-all duration-300 ease-in-out px-8 py-4 uppercase text-black bg-yellow-300 shadow-red-600 hover:bg-red-600 hover:text-white hover:shadow-yellow-600"
+          aria-label={`${ctaText} - Contactar por WhatsApp`}
         >
           {ctaText}
         </a>

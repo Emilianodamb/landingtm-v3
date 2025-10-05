@@ -19,7 +19,7 @@ const ScheduleLocation: React.FC<ScheduleLocationProps> = ({
   const businessStatus = useBusinessStatus(scheduleConfig);
 
   return (
-    <section className="bg-gray-300 p-8 pt-36">
+    <section className="bg-gray-300 p-8 pt-28 md:pt-36">
       <h2 className="uppercase text-2xl font-bold text-center">Cuándo y dónde encontrarnos</h2>
       <div className="max-w-7xl mx-auto">
         {/* Grid responsive - Mobile First */}

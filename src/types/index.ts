@@ -227,6 +227,8 @@ export interface BusinessContactInfo {
   whatsappInfo: {
     number: string;
     defaultMessage: string;
+    ctaMessage?: string;
+    ctaUrl?: string;
   };
   businessAddress: {
     street: string;
