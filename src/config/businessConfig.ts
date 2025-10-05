@@ -91,47 +91,40 @@ export const MAP_CONFIG: MapConfig = {
 // Configuración de servicios
 export const SERVICES_CONFIG: Service[] = [
   {
-    id: 'maintenance',
-    title: 'Mantenimiento preventivo',
-    description: 'Chequeo completo para evitar fallas inesperadas.',
-    icon: 'maintenance',
-    category: 'preventivo',
-    featured: true,
-  },
-  {
-    id: 'inspection',
-    title: 'Revisión pre-VTV',
-    description: 'Control de frenos, luces y emisiones.',
-    icon: 'inspection',
-    category: 'control',
-  },
-  {
-    id: 'injection',
-    title: 'Inyección electrónica',
-    description: 'Revisión y ajuste de inyectores.',
-    icon: 'injection',
-    category: 'electrónico',
-  },
-  {
-    id: 'diagnostic',
-    title: 'Diagnóstico computarizado',
-    description: 'Detección de fallas electrónicas.',
-    icon: 'diagnostic',
-    category: 'electrónico',
-  },
-  {
     id: 'airConditioning',
     title: 'Aire acondicionado',
     description: 'Carga de gas y reparación de compresores.',
     icon: 'airConditioning',
-    category: 'confort',
   },
   {
     id: 'suspension',
     title: 'Suspensión y tren delantero',
     description: 'Reparación de amortiguadores y bujes.',
     icon: 'suspension',
-    category: 'mecánico',
+  },
+  {
+    id: 'inspection',
+    title: 'Revisión pre-VTV',
+    description: 'Control de frenos, luces y emisiones.',
+    icon: 'inspection',
+  },
+  {
+    id: 'maintenance',
+    title: 'Mantenimiento preventivo',
+    description: 'Chequeo completo para evitar fallas inesperadas.',
+    icon: 'maintenance',
+  },
+  {
+    id: 'diagnostic',
+    title: 'Diagnóstico computarizado',
+    description: 'Detección de fallas electrónicas.',
+    icon: 'diagnostic',
+  },
+  {
+    id: 'injection',
+    title: 'Inyección electrónica',
+    description: 'Revisión y ajuste de inyectores.',
+    icon: 'injection',
   },
 ];
 

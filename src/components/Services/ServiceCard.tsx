@@ -24,24 +24,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, className = '' }) =>
       <p className="text-gray-600 text-sm leading-relaxed">
         {service.description}
       </p>
-      
-      {/* Badge de categoría (opcional) */}
-      {service.category && (
-        <div className="mt-3">
-          <span className="inline-block bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded-full">
-            {service.category}
-          </span>
-        </div>
-      )}
-      
-      {/* Badge de destacado (opcional) */}
-      {service.featured && (
-        <div className="absolute top-2 right-2">
-          <span className="bg-yellow-400 text-black text-xs px-2 py-1 rounded-full font-semibold">
-            Destacado
-          </span>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,56 +1,67 @@
 import React from 'react';
 import type { ServiceIcon, IconConfig } from '../types';
+import {
+  AcUnit,
+  DirectionsCar,
+  Search,
+  Build,
+  Computer,
+  FlashOn,
+  Stop,
+  Settings,
+  ElectricalServices,
+  Tune,
+} from '@mui/icons-material';
 
-// Mapeo de iconos usando emojis (más tarde se puede cambiar por MUI icons)
-// Mantiene la consistencia visual del diseño original
+// Mapeo de iconos usando MUI Material Icons - Estética replicada de About cards
 export const SERVICE_ICONS: Record<ServiceIcon, IconConfig> = {
   maintenance: {
-    component: () => <span className="text-6xl">🔧</span>,
+    component: () => <Build sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   inspection: {
-    component: () => <span className="text-6xl">🔍</span>,
+    component: () => <Search sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   injection: {
-    component: () => <span className="text-6xl">⚡</span>,
+    component: () => <FlashOn sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   diagnostic: {
-    component: () => <span className="text-6xl">💻</span>,
+    component: () => <Computer sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   airConditioning: {
-    component: () => <span className="text-6xl">❄️</span>,
+    component: () => <AcUnit sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   suspension: {
-    component: () => <span className="text-6xl">🚗</span>,
+    component: () => <DirectionsCar sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   brakes: {
-    component: () => <span className="text-6xl">🛑</span>,
+    component: () => <Stop sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   engine: {
-    component: () => <span className="text-6xl">🔩</span>,
+    component: () => <Settings sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   electrical: {
-    component: () => <span className="text-6xl">🔌</span>,
+    component: () => <ElectricalServices sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
   transmission: {
-    component: () => <span className="text-6xl">⚙️</span>,
+    component: () => <Tune sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
