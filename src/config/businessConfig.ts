@@ -59,7 +59,24 @@ export const SCHEDULE_CONFIG: ScheduleConfig = {
     // Sábado
     { day: 6, isOpen: false, shifts: [] },
   ],
-  holidays: [], // Se pueden agregar fechas específicas
+  // Feriados nacionales y días no laborables (formato: "YYYY-MM-DD")
+  holidays: [
+    "2025-01-01", // Año Nuevo
+    "2025-02-24", // Carnaval
+    "2025-02-25", // Carnaval
+    "2025-03-24", // Día Nacional de la Memoria por la Verdad y la Justicia
+    "2025-04-02", // Día del Veterano y de los Caídos en la Guerra de Malvinas
+    "2025-04-18", // Viernes Santo
+    "2025-05-01", // Día del Trabajador
+    "2025-05-25", // Día de la Revolución de Mayo
+    "2025-06-20", // Paso a la Inmortalidad del General Manuel Belgrano
+    "2025-07-09", // Día de la Independencia
+    "2025-08-17", // Paso a la Inmortalidad del General José de San Martín
+    "2025-10-12", // Día del Respeto a la Diversidad Cultural
+    "2025-11-20", // Día de la Soberanía Nacional
+    "2025-12-08", // Inmaculada Concepción de María
+    "2025-12-25", // Navidad
+  ],
 };
 
 // Configuración de ubicación

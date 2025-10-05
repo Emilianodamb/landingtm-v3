@@ -69,7 +69,7 @@ export interface BusinessConfig {
 // Configuración de horarios
 export interface ScheduleConfig {
   workingDays: WorkingDay[];
-  holidays?: Date[];
+  holidays?: string[]; // Fechas como string "2025-01-01", "2025-12-25"
   specialHours?: SpecialHours[];
 }
 

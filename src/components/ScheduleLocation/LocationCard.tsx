@@ -1,6 +1,6 @@
 import React from 'react';
 import type { LocationConfig } from '../../types';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { LocationOn, Directions } from '@mui/icons-material';
 
 interface LocationCardProps {
   locationConfig: LocationConfig;
@@ -8,9 +8,8 @@ interface LocationCardProps {
 }
 
 const LocationCard: React.FC<LocationCardProps> = ({ locationConfig, directionsUrl }) => {
-  // Íconos usando emojis
-  const LocationIcon = () => <span className="text-5xl">📍</span>;
-  const DirectionsIcon = () => <span className="text-lg">🚗</span>;
+  // Íconos MUI con estética consistente con Services y About
+  const LocationIcon = () => <LocationOn sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />;
 
   return (
     <div className="bg-[#e5e5e5] rounded shadow-lg text-center p-6 min-h-[400px] flex flex-col">
@@ -40,31 +39,14 @@ const LocationCard: React.FC<LocationCardProps> = ({ locationConfig, directionsU
           </div>
         </div>
 
-        {/* Información de contacto */}
-        {locationConfig.contact && (
-          <div className="mt-4 space-y-1">
-            {locationConfig.contact.phone && (
-              <p className="text-sm">
-                <WhatsAppIcon className="text-green-600" />
-                {locationConfig.contact.phone}
-              </p>
-            )}
-            {locationConfig.contact.email && (
-              <p className="text-sm">
-                ✉️ {locationConfig.contact.email}
-              </p>
-            )}
-          </div>
-        )}
-
-        {/* Botón Cómo Llegar */}
+        {/* Botón Cómo Llegar con estética CTA */}
         <a
           href={directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full inline-flex items-center justify-center border border-transparent text-sm font-bold text-white bg-green-600 hover:bg-green-700 shadow-md rounded px-4 py-2 transition-all duration-300 ease-in-out gap-2 mt-4"
+          className="w-full inline-flex items-center justify-center border border-transparent text-lg font-bold shadow-md rounded-none gap-2 transition-all duration-300 ease-in-out px-8 py-4 uppercase text-black bg-yellow-300 shadow-red-600 hover:bg-red-600 hover:text-white hover:shadow-yellow-600 mt-4 [&_svg]:transition-colors [&_svg]:duration-300"
         >
-          <DirectionsIcon />
+          <Directions sx={{ fontSize: 18 }} />
           Cómo Llegar
         </a>
       </div>
