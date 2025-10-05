@@ -14,8 +14,13 @@
 
 body {
   background-color: #e5e5e5;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Compensar la altura del header fixed para las anclas */
+html {
+  scroll-padding-top: 5rem; /* 80px - altura del header h-20 */
 }

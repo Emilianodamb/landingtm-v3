@@ -13,7 +13,7 @@ const MobileMenuButton: React.FC<MobileMenuButtonProps> = ({ isOpen, onToggle })
     <div className="md:hidden">
       <button
         onClick={onToggle}
-        className="relative p-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 rounded-md"
+        className="relative p-2 focus:outline-none rounded-md"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >

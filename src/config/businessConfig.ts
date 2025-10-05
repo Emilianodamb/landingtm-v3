@@ -524,7 +524,6 @@ export const HEADER_CONFIG: HeaderConfig = {
     { label: 'Inicio', href: '#home' },
     { label: 'Servicios', href: '#services' },
     { label: 'Nosotros', href: '#about' },
-    { label: 'Marcas', href: '#brands' },
     { label: 'Contacto', href: '#contact' },
   ],
   ctaButton: {
