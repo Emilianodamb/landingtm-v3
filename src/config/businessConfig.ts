@@ -202,7 +202,7 @@ export const ABOUT_ITEMS_CONFIG: AboutItem[] = [
   { 
     icon: 'CreditCardIcon', 
     title: 'Facilidades de Pago', 
-    desc: 'Aceptamos todos los medios de pago y, todos los miércoles, ofrecemos 3 cuotas SIN INTERÉS con tarjetas Visa y Mastercard bancarizadas. Queremos que la calidad no sea un lujo, sino una opción accesible.' 
+    desc: 'Aceptamos todos los medios de pago, podés hacerlo en cuotas con tarjetas Visa y Mastercard, consultá los beneficios con tu tarjeta bancarizada. Queremos que la calidad no sea un lujo, sino una opción accesible.' 
   },
 ];
 
@@ -212,36 +212,31 @@ export const TESTIMONIALS_CONFIG: Testimonial[] = [
     id: 1,
     name: "Facundo Bianchi",
     rating: 5,
-    comment: "Excelente atención y trabajo profesional. Juan me explicó todo el proceso y los precios fueron muy justos. Más de 25 años de experiencia se notan en cada detalle.",
-    avatar: "https://i.pravatar.cc/150?img=1"
+    comment: "Excelente atención y trabajo profesional. Juan me explicó todo el proceso y los precios fueron muy justos."
   },
   {
     id: 2,
     name: "Valentina Quiroga",
     rating: 5,
-    comment: "Llevé mi auto para el service y quedé muy conforme. Me detectaron un problema que otro taller no había visto. Muy honestos y profesionales. Lo recomiendo 100%.",
-    avatar: "https://i.pravatar.cc/150?img=2"
+    comment: "Llevé mi auto para el service y quedé muy conforme. Me detectaron un problema que otro taller no había visto. Muy honestos y profesionales. Lo recomiendo 100%."
   },
   {
     id: 3,
     name: "Ezequiel Villanueva",
     rating: 5,
-    comment: "Tenía un problema raro en el motor que nadie podía solucionar. En Total Mecánica lo resolvieron rápido y al mejor precio. Atención de primera y muy buena ubicación.",
-    avatar: "https://i.pravatar.cc/150?img=3"
+    comment: "Tenía un problema en el motor que nadie podía solucionar y me lo resolvieron rápido y sin vueltas. Atención de primera y muy buena ubicación."
   },
   {
     id: 4,
     name: "Micaela Battaglia",
     rating: 5,
-    comment: "Llegué con el aire acondicionado sin funcionar en pleno verano. Me lo arreglaron en el día y funciona perfecto. Trato excelente y precios accesibles.",
-    avatar: "https://i.pravatar.cc/150?img=4"
+    comment: "Llegué con el aire acondicionado sin funcionar en pleno verano. Me lo arreglaron en el día y funciona perfecto. Muy recomendable."
   },
   {
     id: 5,
     name: "Nicolás Petrecca",
     rating: 5,
-    comment: "Me prepararon el auto para la VTV y pasé sin problemas. Son muy detallistas y te explican todo lo que hacen. La experiencia de Juan se nota muchísimo.",
-    avatar: "https://i.pravatar.cc/150?img=5"
+    comment: "Aguante total mecánica!! Mis mecánicos de confianza."
   }
 ];
 

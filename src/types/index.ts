@@ -198,7 +198,6 @@ export interface Testimonial {
   name: string;
   rating: number;
   comment: string;
-  avatar: string;
 }
 
 // Configuración del carrusel de testimoniales

@@ -91,21 +91,8 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
             <FormatQuoteIcon sx={{ fontSize: 48, color: '#FFDA36', opacity: 0.8 }} />
           </div>
 
-          {/* Foto de perfil */}
-          <div className="mb-4 mt-2">
-            <img 
-              src={currentTestimonial.avatar}
-              alt={`Foto de perfil de ${currentTestimonial.name}`}
-              className="w-16 h-16 rounded-full object-cover border-3 border-yellow-300 shadow-sm"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentTestimonial.name)}&background=FFDA36&color=000&size=150&bold=true`;
-              }}
-            />
-          </div>
-
           {/* Nombre */}
-          <h4 className="font-semibold text-lg text-gray-900 mb-3">
+          <h4 className="font-semibold text-lg text-gray-900 mb-4 mt-4">
             {currentTestimonial.name}
           </h4>
 
