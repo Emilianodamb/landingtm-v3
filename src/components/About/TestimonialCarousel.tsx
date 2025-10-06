@@ -170,7 +170,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
           ¿Quedaste conforme con nuestro servicio?
         </p>
         <a
-          href="https://g.page/r/CfQeHb4qX0UQEBM/review"
+          href="https://g.page/r/CSbx7qLcHslHEBM/review"
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center border border-transparent text-sm font-bold shadow-md rounded-none gap-2 transition-all duration-300 ease-in-out px-6 py-3 uppercase mb-4 ${

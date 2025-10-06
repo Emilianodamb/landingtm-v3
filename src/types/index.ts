@@ -152,7 +152,7 @@ export interface Service {
 export type ServiceIcon = 
   | 'maintenance'
   | 'inspection' 
-  | 'injection'
+  | 'generalMechanics'
   | 'diagnostic'
   | 'airConditioning'
   | 'suspension'

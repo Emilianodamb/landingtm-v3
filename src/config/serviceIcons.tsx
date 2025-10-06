@@ -6,11 +6,11 @@ import {
   Search,
   Build,
   Computer,
-  FlashOn,
   Stop,
   Settings,
   ElectricalServices,
   Tune,
+  HomeRepairService,
 } from '@mui/icons-material';
 
 // Mapeo de iconos usando MUI Material Icons - Estética replicada de About cards
@@ -25,8 +25,8 @@ export const SERVICE_ICONS: Record<ServiceIcon, IconConfig> = {
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },
-  injection: {
-    component: () => <FlashOn sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
+  generalMechanics: {
+    component: () => <HomeRepairService sx={{ fontSize: 50, color: '#FFDA36', filter: 'drop-shadow(0px 0px 1px red)' }} />,
     color: '#FFDA36',
     style: { filter: 'drop-shadow(0px 0px 1px red)' },
   },

@@ -98,7 +98,7 @@ export const LOCATION_CONFIG: LocationConfig = {
 // Configuración del mapa
 export const MAP_CONFIG: MapConfig = {
   embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3277.7718282922793!2d-58.39687842347356!3d-34.74432397282099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd2aa6b0db3c7%3A0x5a4f8a2b3c1d0e9f!2sCapdevila%20125%2C%20Banfield%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1697000000000!5m2!1ses!2sar',
-  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Lomas+de+Zamora,+Buenos+Aires,+Argentina',
+  directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Total+Mecánica-Aire+Acondicionado+Automotor,+Gral.+Capdevila+125,+B1828ARW+Banfield,+Provincia+de+Buenos+Aires&travelmode=driving',
   coordinates: {
     lat: -34.744324,
     lng: -58.396878,
@@ -110,38 +110,38 @@ export const SERVICES_CONFIG: Service[] = [
   {
     id: 'airConditioning',
     title: 'Aire acondicionado',
-    description: 'Carga de gas y reparación de compresores.',
+    description: 'Vacío y carga de gas, reparaciones.',
     icon: 'airConditioning',
   },
   {
     id: 'suspension',
     title: 'Suspensión y tren delantero',
-    description: 'Reparación de amortiguadores y bujes.',
+    description: 'Servicio integral de suspensión y tren delantero, detección y supresión de ruidos.',
     icon: 'suspension',
   },
   {
     id: 'inspection',
     title: 'Revisión pre-VTV',
-    description: 'Control de frenos, luces y emisiones.',
+    description: 'Control de frenos, luces, emisiones, tren delantero y trasero.',
     icon: 'inspection',
   },
   {
     id: 'maintenance',
     title: 'Mantenimiento preventivo',
-    description: 'Chequeo completo para evitar fallas inesperadas.',
+    description: 'Chequeo completo, cambio de aceite y filtros, distribuciones.',
     icon: 'maintenance',
   },
   {
     id: 'diagnostic',
     title: 'Diagnóstico computarizado',
-    description: 'Detección de fallas electrónicas.',
+    description: 'Escaneo y detección de fallas.',
     icon: 'diagnostic',
   },
   {
-    id: 'injection',
-    title: 'Inyección electrónica',
-    description: 'Revisión y ajuste de inyectores.',
-    icon: 'injection',
+    id: 'generalMechanics',
+    title: 'Mecánica general',
+    description: 'Frenos, embragues, motores, tapas de cilindro, ABS, rodamientos y más',
+    icon: 'generalMechanics',
   },
 ];
 
@@ -313,9 +313,9 @@ export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
     id: 'address',
     type: 'address',
     label: 'Visitanos',
-    value: 'Capdevila 125, Banfield',
+    value: 'Gral. Capdevila 125, Banfield',
     icon: '📍',
-    href: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Buenos+Aires,+Argentina',
+    href: 'https://www.google.com/maps/dir/?api=1&destination=Total+Mecánica-Aire+Acondicionado+Automotor,+Gral.+Capdevila+125,+B1828ARW+Banfield,+Provincia+de+Buenos+Aires&travelmode=driving',
     description: 'Lun-Vie: 8:00-12:00 | 14:30-18:00',
     available: true,
   },
@@ -340,34 +340,40 @@ export const FOOTER_SECTIONS_CONFIG: FooterSection[] = [
     order: 1,
     links: [
       {
+        id: 'airConditioning',
+        label: 'Aire acondicionado',
+        href: '#services',
+        description: 'Vacío y carga de gas, reparaciones',
+      },
+      {
+        id: 'suspension',
+        label: 'Suspensión y tren delantero',
+        href: '#services',
+        description: 'Servicio integral de suspensión',
+      },
+      {
+        id: 'inspection',
+        label: 'Revisión pre-VTV',
+        href: '#services',
+        description: 'Control completo para VTV',
+      },
+      {
         id: 'maintenance',
         label: 'Mantenimiento preventivo',
         href: '#services',
-        description: 'Chequeos completos para evitar fallas',
+        description: 'Chequeo completo y cambio de filtros',
       },
       {
         id: 'diagnostic',
         label: 'Diagnóstico computarizado',
         href: '#services',
-        description: 'Detección precisa de fallas',
+        description: 'Escaneo y detección de fallas',
       },
       {
-        id: 'brakes',
-        label: 'Sistema de frenos',
+        id: 'generalMechanics',
+        label: 'Mecánica general',
         href: '#services',
-        description: 'Reparación y mantenimiento',
-      },
-      {
-        id: 'aircon',
-        label: 'Aire acondicionado',
-        href: '#services',
-        description: 'Carga de gas y reparaciones',
-      },
-      {
-        id: 'pre-vtv',
-        label: 'Revisión pre-VTV',
-        href: '#services',
-        description: 'Preparación para verificación técnica',
+        description: 'Frenos, embragues, motores y más',
       },
     ],
   },
@@ -415,11 +421,11 @@ export const FOOTER_SECTIONS_CONFIG: FooterSection[] = [
     links: [
       {
         id: 'address',
-        label: 'Capdevila 125, Banfield',
-        href: 'https://www.google.com/maps/dir/?api=1&destination=Capdevila+125,+Banfield,+Buenos+Aires,+Argentina',
+        label: 'Gral. Capdevila 125, Banfield',
+        href: 'https://www.google.com/maps/dir/?api=1&destination=Total+Mecánica-Aire+Acondicionado+Automotor,+Gral.+Capdevila+125,+B1828ARW+Banfield,+Provincia+de+Buenos+Aires&travelmode=driving',
         isExternal: true,
         icon: 'location',
-        description: 'Buenos Aires, Argentina (1828)',
+        description: 'Buenos Aires, Argentina (B1828ARW)',
       },
       {
         id: 'phone',
