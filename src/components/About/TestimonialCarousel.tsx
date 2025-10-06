@@ -75,7 +75,7 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
           Lo que dicen nuestros clientes
         </h3>
         <p className="text-gray-600">
-          40 años construyendo confianza, una reparación a la vez
+          25 años construyendo confianza, una reparación a la vez
         </p>
       </div>
 

@@ -58,9 +58,9 @@ const FooterSection: React.FC<FooterSectionProps> = ({ section }) => {
               {/* Icono opcional */}
               {getIcon(link.icon)}
               
-              <div className="flex-grow">
+              <div className="flex-grow overflow-hidden">
                 {/* Etiqueta del enlace */}
-                <div className="font-medium group-hover:text-yellow-400 transition-colors duration-300">
+                <div className="font-medium group-hover:text-yellow-400 transition-colors duration-300 break-words">
                   {link.label}
               </div>
                 

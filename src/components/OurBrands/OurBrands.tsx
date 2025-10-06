@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import type { OurBrandsProps, Brand } from '../../types';
-import { BRANDS_CONFIG, CAROUSEL_CONFIG } from '../../config/businessConfig';
+import { BRANDS_CONFIG, CAROUSEL_CONFIG, BUSINESS_CONTACT_CONFIG } from '../../config/businessConfig';
 import BrandItem from './BrandItem';
 import 'swiper/swiper-bundle.css';
 
@@ -57,8 +57,8 @@ const OurBrands: React.FC<OurBrandsProps> = ({
     centeredSlides: false,
   };
 
-  // Mensaje para WhatsApp (simulado - se puede configurar en businessConfig)
-  const whatsappMessage = "Hola! Quería consultar por el mantenimiento de mi auto";
+  // Mensaje para WhatsApp usando configuración del negocio
+  const whatsappMessage = "Hola! Quería consultar por el mantenimiento de mi auto - vi su página web";
 
   return (
     <section className="py-12 sm:py-14 lg:py-16 bg-gray-50">
@@ -135,7 +135,7 @@ const OurBrands: React.FC<OurBrandsProps> = ({
             ¿No ves tu marca? Contáctanos, trabajamos con muchas más marcas.
           </p>
           <a
-            href={`https://wa.me/5491155555555?text=${encodeURIComponent(whatsappMessage)}`}
+            href={`https://wa.me/${BUSINESS_CONTACT_CONFIG.whatsappInfo.number.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-yellow-300 text-black px-6 py-2 rounded-md hover:bg-yellow-400 transition-colors font-medium text-sm"

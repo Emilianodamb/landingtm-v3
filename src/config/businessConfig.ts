@@ -91,7 +91,7 @@ export const LOCATION_CONFIG: LocationConfig = {
   },
   contact: {
     phone: '+54 11 2387-4371',
-    email: 'info@totalmecánicabanfield.com.ar',
+    email: 'totalmecanica.taller@gmail.com',
   },
 };
 
@@ -187,7 +187,7 @@ export const ABOUT_ITEMS_CONFIG: AboutItem[] = [
   { 
     icon: 'EngineeringIcon', 
     title: 'Experiencia y Profesionalismo', 
-    desc: 'Llevamos más de 40 años en el sector. Este tiempo nos ha enseñado a diagnosticar con agilidad y a resolver problemas de forma eficaz, evitando gastos innecesarios y asegurando una solución duradera.' 
+    desc: 'Llevamos más de 25 años en el sector. Este tiempo nos ha enseñado a diagnosticar con agilidad y a resolver problemas de forma eficaz, evitando gastos innecesarios y asegurando una solución duradera.' 
   },
   { 
     icon: 'HandshakeIcon', 
@@ -212,7 +212,7 @@ export const TESTIMONIALS_CONFIG: Testimonial[] = [
     id: 1,
     name: "Facundo Bianchi",
     rating: 5,
-    comment: "Excelente atención y trabajo profesional. Juan me explicó todo el proceso y los precios fueron muy justos. Más de 40 años de experiencia se notan en cada detalle.",
+    comment: "Excelente atención y trabajo profesional. Juan me explicó todo el proceso y los precios fueron muy justos. Más de 25 años de experiencia se notan en cada detalle.",
     avatar: "https://i.pravatar.cc/150?img=1"
   },
   {
@@ -256,7 +256,7 @@ export const TESTIMONIALS_CAROUSEL_CONFIG: TestimonialCarouselConfig = {
 export const BUSINESS_CONTACT_CONFIG: BusinessContactInfo = {
   businessName: 'Total Mecánica Banfield',
   phoneNumber: '+54 11 2387-4371',
-  emailAddress: 'info@totalmecánicabanfield.com.ar',
+  emailAddress: 'totalmecanica.taller@gmail.com',
   whatsappInfo: {
     number: '+5491123874371',
     defaultMessage: 'Hola! Me interesa obtener información sobre sus servicios de mecánica.',
@@ -303,9 +303,9 @@ export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
     id: 'email',
     type: 'email',
     label: 'Email',
-    value: 'info@totalmecánicabanfield.com.ar',
+    value: 'totalmecanica.taller@gmail.com',
     icon: '✉️',
-    href: 'mailto:info@totalmecánicabanfield.com.ar',
+    href: 'mailto:totalmecanica.taller@gmail.com',
     description: 'Te respondemos en 24-48hs',
     available: true,
   },
@@ -324,11 +324,11 @@ export const CONTACT_METHODS_CONFIG: ContactMethod[] = [
 // Configuración de la empresa para footer
 export const FOOTER_COMPANY_CONFIG: FooterCompanyInfo = {
   name: 'Total Mecánica Banfield',
-  description: 'Con más de 40 años de experiencia, somos el taller mecánico de confianza en Banfield. Especialistas en diagnóstico, reparación y mantenimiento de vehículos de todas las marcas.',
+  description: 'Con más de 25 años de experiencia, somos el taller mecánico de confianza en Banfield. Especialistas en diagnóstico, reparación y mantenimiento de vehículos de todas las marcas.',
   address: 'Capdevila 125, Banfield, Buenos Aires',
   phone: '+54 11 2387-4371',
-  email: 'info@totalmecánicabanfield.com.ar',
-  foundedYear: 1983,
+  email: 'totalmecanica.taller@gmail.com',
+  foundedYear: 1999,
   logoUrl: '/logo-white.png',
 };
 
@@ -430,8 +430,8 @@ export const FOOTER_SECTIONS_CONFIG: FooterSection[] = [
       },
       {
         id: 'email',
-        label: 'info@totalmecánicabanfield.com.ar',
-        href: 'mailto:info@totalmecánicabanfield.com.ar',
+        label: 'totalmecanica.taller@gmail.com',
+        href: 'mailto:totalmecanica.taller@gmail.com',
         icon: 'email',
         description: 'Respuesta en 24-48hs',
       },
@@ -508,7 +508,7 @@ export const FOOTER_LEGAL_CONFIG: FooterLink[] = [
 // Configuración del componente Hero
 export const HERO_CONFIG: HeroConfig = {
   title: 'Tu taller mecánico de confianza en Zona Sur',
-  subtitle: 'Atención profesional, diagnósticos precisos y soluciones confiables para tu vehículo. Más de 40 años de experiencia en Zona Sur. Reservá tu turno por WhatsApp.',
+  subtitle: 'Atención profesional, diagnósticos precisos y soluciones confiables para tu vehículo. Más de 25 años de experiencia en Zona Sur. Reservá tu turno por WhatsApp.',
   ctaText: 'Contactanos ahora',
   ctaHref: 'https://wa.me/5491123874371?text=Hola%20Total%20Mec%C3%A1nica%20Banfield%2C%20estoy%20en%20su%20sitio%20web%20y%20quer%C3%ADa%20realizar%20una%20consulta%20acerca%20de%20sus%20servicios',
   heroImage: {

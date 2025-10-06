@@ -192,7 +192,7 @@ const Contact: React.FC<ContactProps> = ({
             <ul className="space-y-1 text-xs text-gray-700">
               <li className="flex items-start">
                 <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>
-                Más de 40 años de experiencia
+                Más de 25 años de experiencia
               </li>
               <li className="flex items-start">
                 <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>

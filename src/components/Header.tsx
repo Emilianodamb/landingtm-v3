@@ -25,7 +25,11 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full bg-[#e5e5e5] backdrop-blur-sm border-gray-200 z-40 shadow-sm">
+    <header 
+      id="navigation" 
+      className="fixed top-0 left-0 right-0 w-full bg-[#e5e5e5] backdrop-blur-sm border-gray-200 z-40 shadow-sm"
+      role="banner"
+    >
       <div className="w-full max-w-full md:max-w-[1280px] md:mx-auto">
         <div className="flex items-center justify-between h-20 px-4 md:px-8">
           {/* Logo */}
