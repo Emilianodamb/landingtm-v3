@@ -211,46 +211,36 @@ export const TESTIMONIALS_CONFIG: Testimonial[] = [
   {
     id: 1,
     name: "Facundo Bianchi",
-    service: "Reparación de frenos",
     rating: 5,
     comment: "Excelente atención y trabajo profesional. Juan me explicó todo el proceso y los precios fueron muy justos. Más de 40 años de experiencia se notan en cada detalle.",
-    date: "Hace 2 semanas",
     avatar: "https://i.pravatar.cc/150?img=1"
   },
   {
     id: 2,
     name: "Valentina Quiroga",
-    service: "Service completo",
     rating: 5,
     comment: "Llevé mi auto para el service y quedé muy conforme. Me detectaron un problema que otro taller no había visto. Muy honestos y profesionales. Lo recomiendo 100%.",
-    date: "Hace 1 mes",
     avatar: "https://i.pravatar.cc/150?img=2"
   },
   {
     id: 3,
     name: "Ezequiel Villanueva",
-    service: "Diagnóstico computarizado",
     rating: 5,
     comment: "Tenía un problema raro en el motor que nadie podía solucionar. En Total Mecánica lo resolvieron rápido y al mejor precio. Atención de primera y muy buena ubicación.",
-    date: "Hace 3 semanas",
     avatar: "https://i.pravatar.cc/150?img=3"
   },
   {
     id: 4,
     name: "Micaela Battaglia",
-    service: "Aire acondicionado",
     rating: 5,
     comment: "Llegué con el aire acondicionado sin funcionar en pleno verano. Me lo arreglaron en el día y funciona perfecto. Trato excelente y precios accesibles.",
-    date: "Hace 2 meses",
     avatar: "https://i.pravatar.cc/150?img=4"
   },
   {
     id: 5,
     name: "Nicolás Petrecca",
-    service: "Revisión pre-VTV",
     rating: 5,
     comment: "Me prepararon el auto para la VTV y pasé sin problemas. Son muy detallistas y te explican todo lo que hacen. La experiencia de Juan se nota muchísimo.",
-    date: "Hace 1 semana",
     avatar: "https://i.pravatar.cc/150?img=5"
   }
 ];

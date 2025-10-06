@@ -104,8 +104,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSubmitting = fals
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-      <div className="mb-6">
+    <>
+      <div className="mb-8">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           Envíanos tu consulta
         </h3>
@@ -261,7 +261,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSubmitting = fals
             onChange={handleChange}
             onBlur={() => handleBlur('messageContent')}
             rows={4}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-colors resize-vertical ${
+            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-colors resize-none ${
               errors.messageContent && touched.messageContent
                 ? 'border-red-500 bg-red-50'
                 : 'border-gray-300 hover:border-gray-400'
@@ -310,7 +310,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit, isSubmitting = fals
           </p>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 

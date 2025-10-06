@@ -196,10 +196,8 @@ export type AboutIcon =
 export interface Testimonial {
   id: number;
   name: string;
-  service: string;
   rating: number;
   comment: string;
-  date: string;
   avatar: string;
 }
 

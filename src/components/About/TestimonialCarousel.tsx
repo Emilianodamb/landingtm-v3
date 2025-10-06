@@ -81,19 +81,22 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
 
       {/* Contenedor del carrusel */}
       <div className="relative">
-        {/* Tarjeta principal del testimonio - Exactamente igual al original */}
-        <div className="bg-white rounded-lg shadow-md p-8 min-h-[400px] flex flex-col items-center text-center">
-          {/* Ícono de comillas */}
-          <div className="absolute top-4 left-4">
-            <FormatQuoteIcon sx={{ fontSize: 40, color: '#FFDA36', opacity: 0.7 }} />
+        {/* Tarjeta principal del testimonio - Diseño minimalista mejorado */}
+        <div className="bg-white rounded-lg shadow-sm p-8 min-h-[320px] flex flex-col items-center text-center relative">
+          {/* Comillas decorativas amarillas */}
+          <div className="absolute top-6 left-6">
+            <FormatQuoteIcon sx={{ fontSize: 48, color: '#FFDA36', opacity: 0.8 }} />
+          </div>
+          <div className="absolute bottom-6 right-6 rotate-180">
+            <FormatQuoteIcon sx={{ fontSize: 48, color: '#FFDA36', opacity: 0.8 }} />
           </div>
 
           {/* Foto de perfil */}
-          <div className="mt-4 mb-6">
+          <div className="mb-4 mt-2">
             <img 
               src={currentTestimonial.avatar}
               alt={`Foto de perfil de ${currentTestimonial.name}`}
-              className="w-20 h-20 rounded-full object-cover border-4 border-yellow-300 shadow-md"
+              className="w-16 h-16 rounded-full object-cover border-3 border-yellow-300 shadow-sm"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(currentTestimonial.name)}&background=FFDA36&color=000&size=150&bold=true`;
@@ -101,29 +104,20 @@ const TestimonialCarousel: React.FC<TestimonialCarouselProps> = ({
             />
           </div>
 
-          {/* Calificación en estrellas */}
-          <div className="mb-4">
-            {renderStars(currentTestimonial.rating)}
-          </div>
-
           {/* Nombre */}
-          <h4 className="font-bold text-xl text-gray-900 mb-4">
+          <h4 className="font-semibold text-lg text-gray-900 mb-3">
             {currentTestimonial.name}
           </h4>
+
+          {/* Calificación en estrellas */}
+          <div className="mb-6 flex justify-center">
+            {renderStars(currentTestimonial.rating)}
+          </div>
           
           {/* Texto del comentario */}
-          <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic flex-grow">
+          <blockquote className="text-gray-700 text-base leading-relaxed italic flex-grow max-w-lg mx-auto">
             "{currentTestimonial.comment}"
           </blockquote>
-
-          {/* Pie con fecha */}
-          <div className="border-t pt-4 w-full">
-            <div className="text-center text-sm">
-              <span className="text-gray-500">
-                {currentTestimonial.date}
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* Flechas de navegación - Exactamente iguales al original */}

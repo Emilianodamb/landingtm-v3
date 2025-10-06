@@ -63,11 +63,11 @@ const OurBrands: React.FC<OurBrandsProps> = ({
   return (
     <section className="py-12 sm:py-14 lg:py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Encabezado del bloque - Igual al original */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* Encabezado del bloque - Consistente con otros componentes */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl mt-2 font-bold uppercase text-gray-900 mb-4">
             Marcas con las que Trabajamos
-          </h2>
+          </h3>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Especializados en el mantenimiento y reparación de las principales marcas automotrices del mercado
           </p>

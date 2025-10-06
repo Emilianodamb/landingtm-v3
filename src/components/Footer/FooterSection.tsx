@@ -40,9 +40,9 @@ const FooterSection: React.FC<FooterSectionProps> = ({ section }) => {
   return (
     <div className="space-y-4">
       {/* Título de la sección */}
-      <h4 className="text-lg font-bold text-white mb-6 relative">
+      <h4 className="text-xl font-bold text-white mb-6 relative uppercase">
         {section.title}
-        <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-red-500"></div>
+        <div className="absolute -bottom-2 left-0 w-10 h-0.5 bg-yellow-400"></div>
       </h4>
 
       {/* Enlaces de la sección */}
@@ -60,9 +60,9 @@ const FooterSection: React.FC<FooterSectionProps> = ({ section }) => {
               
               <div className="flex-grow">
                 {/* Etiqueta del enlace */}
-                <div className="font-medium group-hover:text-yellow-300 transition-colors duration-300">
+                <div className="font-medium group-hover:text-yellow-400 transition-colors duration-300">
                   {link.label}
-                </div>
+              </div>
                 
                 {/* Descripción opcional */}
                 {link.description && (
@@ -75,7 +75,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ section }) => {
               {/* Indicador de enlace externo */}
               {link.isExternal && (
                 <svg 
-                  className="w-4 h-4 text-gray-400 group-hover:text-yellow-300 transition-colors duration-300 ml-2 flex-shrink-0 mt-0.5" 
+                  className="w-4 h-4 text-gray-400 group-hover:text-yellow-400 transition-colors duration-300 ml-2 flex-shrink-0 mt-0.5" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"

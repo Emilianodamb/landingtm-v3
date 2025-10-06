@@ -20,9 +20,11 @@ const About: React.FC<AboutProps> = ({
       {/* Sección About - Primera parte */}
       <section id="about" className={className}>
         <div className="max-w-7xl mx-auto px-4 pt-6 pb-6 flex flex-col gap-4">
-          {/* Encabezado - Exactamente igual al original */}
-          <h3 className="text-2xl font-bold text-gray-900">{title}</h3>
-          <p className="text-gray-600">{subtitle}</p>
+          {/* Encabezado - Centrado y consistente */}
+          <div className="text-center mb-4">
+            <h3 className="text-2xl mt-2 font-bold uppercase text-gray-900 mb-4">{title}</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+          </div>
 
           {/* Grid de items About - Exactamente igual al original */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

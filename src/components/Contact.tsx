@@ -1,7 +1,12 @@
 import React from 'react';
 import ContactForm from './Contact/ContactForm';
-import ContactInfo from './Contact/ContactInfo';
-import { BUSINESS_CONTACT_CONFIG, CONTACT_METHODS_CONFIG } from '../config/businessConfig';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { BUSINESS_CONTACT_CONFIG, CONTACT_METHODS_CONFIG, SCHEDULE_CONFIG } from '../config/businessConfig';
+import { useBusinessStatus } from '../hooks/useBusinessStatus';
 import type { ContactProps } from '../types';
 
 /**
@@ -13,6 +18,16 @@ const Contact: React.FC<ContactProps> = ({
   subtitle = "Estamos aquí para ayudarte con el cuidado de tu vehículo. Escríbenos y nos pondremos en contacto contigo lo antes posible.",
   className = ""
 }) => {
+  // Hook para estado del negocio en tiempo real
+  const businessStatus = useBusinessStatus(SCHEDULE_CONFIG);
+  const contactMethods = CONTACT_METHODS_CONFIG;
+  
+  const iconMap = {
+    phone: PhoneIcon,
+    email: EmailIcon,
+    whatsapp: WhatsAppIcon,
+    address: LocationOnIcon,
+  };
   return (
     <section 
       id="contact" 
@@ -20,33 +35,22 @@ const Contact: React.FC<ContactProps> = ({
       aria-label="Sección de contacto"
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Encabezado de sección */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        {/* Encabezado de sección - Consistente con otros componentes */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl mt-2 font-bold uppercase text-gray-900 mb-4">
             {title}
-          </h2>
+          </h3>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-red-500 mx-auto mb-6"></div>
-          
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto">
             {subtitle}
           </p>
         </div>
 
-        {/* Grid principal responsive */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16">
-          {/* Columna izquierda - Formulario de contacto */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Envíanos un mensaje
-                </h3>
-                <p className="text-gray-600">
-                  Completa el formulario y te responderemos a la brevedad
-                </p>
-              </div>
-              
+        {/* Grid principal optimizado para mejor aprovechamiento del espacio */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          {/* Formulario de contacto - Columna izquierda completa (1) */}
+          <div className="order-2 lg:order-1 lg:row-span-2">
+            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 h-full">
               <ContactForm 
                 onSubmit={(formData) => {
                   console.log('Formulario enviado:', formData);
@@ -57,12 +61,182 @@ const Contact: React.FC<ContactProps> = ({
             </div>
           </div>
 
-          {/* Columna derecha - Información de contacto */}
+          {/* Métodos de contacto - Columna derecha superior (2) */}
           <div className="order-1 lg:order-2">
-            <ContactInfo 
-              businessContact={BUSINESS_CONTACT_CONFIG}
-              contactMethods={CONTACT_METHODS_CONFIG}
-            />
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+              <h4 className="text-lg font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">
+                Métodos de contacto
+              </h4>
+              
+              <div className="space-y-3">
+                {contactMethods.filter(method => method.available).map((method) => {
+                  const IconComponent = iconMap[method.type as keyof typeof iconMap];
+                  
+                  return (
+                    <a
+                      key={method.id}
+                      href={method.href}
+                      target={method.type === 'email' ? '_blank' : '_self'}
+                      rel={method.type === 'email' ? 'noopener noreferrer' : undefined}
+                      className="flex items-center p-3 bg-gray-50 hover:bg-yellow-50 rounded-lg transition-all duration-300 group border border-gray-200 hover:border-yellow-300"
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center group-hover:bg-yellow-400 transition-colors duration-300">
+                        <IconComponent sx={{ fontSize: 20, color: '#000' }} />
+                      </div>
+                      
+                      <div className="ml-3 flex-grow min-w-0">
+                        <h5 className="font-semibold text-gray-900 group-hover:text-gray-800 text-sm truncate">
+                          {method.label}
+                        </h5>
+                        <p className="text-gray-600 font-medium text-sm truncate">
+                          {method.value}
+                        </p>
+                        {method.description && (
+                          <p className="text-sm text-gray-500 mt-1">
+                            {method.description}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="flex-shrink-0">
+                        <svg 
+                          className="w-5 h-5 text-gray-400 group-hover:text-yellow-600 transition-colors duration-300" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Horarios de atención - Columna derecha inferior (3) */}
+          <div className="order-3 lg:order-3">
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <AccessTimeIcon sx={{ fontSize: 20, color: '#3B82F6' }} />
+                </div>
+                <h4 className="ml-3 text-lg font-semibold text-gray-800">
+                  Horarios de atención
+                </h4>
+              </div>
+              
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="font-medium text-gray-700">Lunes a Viernes:</span>
+                  <span className="text-gray-600">
+                    {SCHEDULE_CONFIG.workingDays
+                      .find(day => day.day === 1)
+                      ?.shifts.map((shift, index) => (
+                        <span key={index}>
+                          {shift.start} - {shift.end} hs
+                          {index < (SCHEDULE_CONFIG.workingDays.find(day => day.day === 1)?.shifts.length || 0) - 1 ? ' / ' : ''}
+                        </span>
+                      ))
+                    }
+                  </span>
+                </div>
+                
+                <div className="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span className="font-medium text-gray-700">Sábados, Domingos y feriados:</span>
+                  <span className="text-gray-600">Cerrado</span>
+                </div>
+              </div>
+
+              {/* Indicador de estado actual dinámico */}
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="flex items-center">
+                  <div className={`w-3 h-3 rounded-full ${
+                    businessStatus.isOpen 
+                      ? 'bg-green-400 animate-pulse' 
+                      : 'bg-red-400'
+                  }`}></div>
+                  <span className="ml-2 text-sm text-gray-600">
+                    Estado actual: <span className={`font-medium ${
+                      businessStatus.isOpen 
+                        ? 'text-green-600' 
+                        : 'text-red-600'
+                    }`}>{businessStatus.statusMessage}</span>
+                  </span>
+                </div>
+                
+                {/* Mensaje informativo adicional */}
+                {businessStatus.warningMessage && (
+                  <p className="text-xs text-gray-500 mt-2">
+                    {businessStatus.warningMessage}
+                  </p>
+                )}
+                
+                <p className="text-xs text-gray-500 mt-1">
+                  * El estado se actualiza automáticamente según nuestros horarios
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Fila inferior con "Por qué elegirnos" y "Nuestra ubicación" (4 y 5) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          {/* Por qué elegirnos (4) */}
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4 border border-yellow-200">
+            <h4 className="text-base font-semibold text-gray-800 mb-2">
+              ¿Por qué elegirnos?
+            </h4>
+            
+            <ul className="space-y-1 text-xs text-gray-700">
+              <li className="flex items-start">
+                <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>
+                Más de 40 años de experiencia
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>
+                Diagnósticos precisos
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>
+                Repuestos garantizados
+              </li>
+              <li className="flex items-start">
+                <span className="text-yellow-500 mr-2 mt-0.5 text-sm">✓</span>
+                Facilidades de pago
+              </li>
+            </ul>
+          </div>
+
+          {/* Nuestra ubicación (5) */}
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <div className="flex items-center mb-2">
+              <LocationOnIcon sx={{ fontSize: 18, color: '#6B7280' }} />
+              <h4 className="ml-2 text-base font-semibold text-gray-800">
+                Nuestra ubicación
+              </h4>
+            </div>
+            
+            <div className="text-xs text-gray-700 space-y-0.5">
+              <p className="font-medium">{BUSINESS_CONTACT_CONFIG.businessAddress.street}</p>
+              <p>
+                {BUSINESS_CONTACT_CONFIG.businessAddress.city}, {BUSINESS_CONTACT_CONFIG.businessAddress.state}
+              </p>
+              <p>
+                {BUSINESS_CONTACT_CONFIG.businessAddress.country} ({BUSINESS_CONTACT_CONFIG.businessAddress.postalCode})
+              </p>
+            </div>
+            
+            <a
+              href={CONTACT_METHODS_CONFIG.find(m => m.type === 'address')?.href || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mt-2 px-3 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-md hover:bg-blue-700 transition-colors duration-300"
+            >
+              <LocationOnIcon sx={{ fontSize: 14 }} className="mr-1" />
+              Ver en Maps
+            </a>
           </div>
         </div>
 

@@ -67,17 +67,17 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
     : 'space-y-4';
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 text-center">
       {/* Título */}
       {title && (
-        <h4 className="text-lg font-bold text-white mb-6 relative">
+        <h4 className="text-xl font-bold text-white mb-6 relative uppercase inline-block">
           {title}
-          <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-red-500"></div>
+          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-10 h-0.5 bg-yellow-400"></div>
         </h4>
       )}
 
       {/* Lista de redes sociales */}
-      <div className={containerClass}>
+      <div className={`${containerClass} justify-center`}>
         {socialLinks.map((social) => {
           const IconComponent = getIcon(social.icon);
           
@@ -130,7 +130,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
       </div>
 
       {/* Mensaje adicional */}
-      <p className="text-sm text-gray-400 max-w-xs leading-relaxed">
+      <p className="text-sm text-gray-400 max-w-sm mx-auto leading-relaxed">
         Mantente conectado con nosotros para recibir consejos, promociones y novedades sobre el cuidado de tu vehículo.
       </p>
     </div>
