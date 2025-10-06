@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContactForm from './Contact/ContactForm';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -7,7 +7,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { BUSINESS_CONTACT_CONFIG, CONTACT_METHODS_CONFIG, SCHEDULE_CONFIG } from '../config/businessConfig';
 import { useBusinessStatus } from '../hooks/useBusinessStatus';
-import type { ContactProps } from '../types';
+import { EmailService } from '../services/emailService';
+import type { ContactProps, ContactFormData } from '../types';
 
 /**
  * Componente principal de contacto que integra el formulario de contacto
@@ -21,6 +22,11 @@ const Contact: React.FC<ContactProps> = ({
   // Hook para estado del negocio en tiempo real
   const businessStatus = useBusinessStatus(SCHEDULE_CONFIG);
   const contactMethods = CONTACT_METHODS_CONFIG;
+  
+  // Estados para manejo de envío del formulario
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
   
   const iconMap = {
     phone: PhoneIcon,
@@ -51,11 +57,47 @@ const Contact: React.FC<ContactProps> = ({
           {/* Formulario de contacto - Columna izquierda completa (1) */}
           <div className="order-2 lg:order-1 lg:row-span-2">
             <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 h-full">
+              {/* Mensaje de estado del envío */}
+              {submitStatus !== 'idle' && (
+                <div className={`mb-4 p-4 rounded-lg border ${
+                  submitStatus === 'success' 
+                    ? 'bg-green-50 border-green-200 text-green-800' 
+                    : 'bg-red-50 border-red-200 text-red-800'
+                }`}>
+                  <p className="text-sm font-medium">{submitMessage}</p>
+                </div>
+              )}
+
               <ContactForm 
-                onSubmit={(formData) => {
-                  console.log('Formulario enviado:', formData);
-                  // Aquí iría la lógica para enviar el formulario
-                  // Ejemplo: enviar a API, mostrar mensaje de confirmación, etc.
+                isSubmitting={isSubmitting}
+                onSubmit={async (formData: ContactFormData) => {
+                  setIsSubmitting(true);
+                  setSubmitStatus('idle');
+                  setSubmitMessage('');
+
+                  try {
+                    await EmailService.sendContactForm(formData);
+                    setSubmitStatus('success');
+                    setSubmitMessage('¡Consulta enviada exitosamente! Te responderemos a la brevedad.');
+                  } catch (error) {
+                    console.error('Error al enviar consulta:', error);
+                    setSubmitStatus('error');
+                    
+                    // Mensaje de error más específico basado en el tipo de error
+                    const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+                    
+                    if (errorMessage.includes('incompletos')) {
+                      setSubmitMessage('Por favor, completa todos los campos requeridos.');
+                    } else if (errorMessage.includes('Configuración')) {
+                      setSubmitMessage('Error de configuración del servicio de email. Contactanos por WhatsApp.');
+                    } else if (errorMessage.includes('HTTP')) {
+                      setSubmitMessage('Error de conexión. Verifica tu internet e intenta nuevamente.');
+                    } else {
+                      setSubmitMessage(`Error: ${errorMessage}. Por favor, contactanos por WhatsApp si el problema persiste.`);
+                    }
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               />
             </div>
